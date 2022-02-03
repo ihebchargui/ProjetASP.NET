@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ProjetAsp2.Models.Driver>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+
+
+            <!-- Export Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <h4 class="text-blue h4">List of Drivers</h4>
+                    <div class="pull-right">
+                        <a asp-action="Create" class="btn btn-primary btn-sm scroll-click"> Create New Driver</a>
+                    </div>
+                </div>
+
+                <div class="pb-20">
+                    <table class="table table-bordered multiple-select-row data-table-export nowrap">
+                        <thead>
+                           
+
+                            <tr>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Adresse)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Salary)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Age)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tel)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.StartDate)
+                                </th>
+
+                                <th>Action</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var driver in Model)
+                            {
+                            <tr>
+                              
+                                <td class="table-plus">
+                                    <img src="~/images/@driver.DriverPicture"
+                                         class="rounded-circle"
+                                         height="40" width="40"
+                                         asp-append-version="true" />
+                                    @driver.FullName
+                                </td>
+                                <td class="table-plus">
+                                    @driver.Adresse
+                                </td>
+                                <td class="table-plus">
+                                    @driver.Salary
+                                </td>
+                                <td class="table-plus">
+                                    @driver.Age
+                                </td>
+                                <td class="table-plus">
+                                    @driver.Tel
+                                </td>
+                                <td class="table-plus">
+                                    @driver.StartDate
+                                </td>
+                               
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@driver.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@driver.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@driver.Id">Delete</a>
+                                </td>
+                            </tr>
+                            }
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Export Datatable End -->
+        </div>
+
+    </div>
+</div>
+
+
+

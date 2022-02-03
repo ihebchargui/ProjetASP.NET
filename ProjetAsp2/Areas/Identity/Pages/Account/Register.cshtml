@@ -1,0 +1,101 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="small-header bg-img5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Register - login</h3>
+            </div>
+            <div class="col-md-6 text-right">
+                <h6 class="breadcrumb">
+                    <a href="index.html">Home</a> / <a href="/">Pages</a> / Register - Login
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Register-login-->
+<section class="section-small">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div>
+                    <!-- Nav tabs-->
+                
+                    <ul role="tablist" class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="#register" aria-controls="login" role="tab" data-toggle="tab">GET STARTED</a></li>
+                        <li role="presentation">
+                        <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">SIGN IN</a></li>
+                    </ul>
+
+
+
+                    <!-- Tab panes-->
+                    <div class="tab-content">
+
+                        <div id="register" role="tabpanel" class="tab-pane fade in active">
+                            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+
+                                <div class="form-group has-feedback">
+                                    <label asp-for="Input.Email"></label>
+                                    <input asp-for="Input.Email" placeholder="Email" class="form-control input-lg" />
+                                    <span aria-hidden="true" class="i fa fa-envelope-o form-control-feedback"></span>
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                               
+
+
+                                <div class="form-group has-feedback">
+                                    <label asp-for="Input.Password"></label>
+                                    <input asp-for="Input.Password" placeholder="Password" class="form-control input-lg" />
+                                    <span aria-hidden="true" class="i fa fa-lock form-control-feedback"></span>
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group has-feedback">
+                                    <label asp-for="Input.ConfirmPassword"></label>
+                                    <input asp-for="Input.ConfirmPassword" placeholder="Password" class="form-control input-lg" />
+                                    <span aria-hidden="true" class="i fa fa-lock form-control-feedback"></span>
+                                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-dark">Register</button>  OR:
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x text-info"></i>
+                                        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </div>
+
+
+                            </form>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

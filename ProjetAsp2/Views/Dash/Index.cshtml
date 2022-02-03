@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <div class="card-box pd-20 height-100-p mb-30">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="~/vendors/images/banner-img.png" alt="">
+                </div>
+
+                <div class="col-md-8">
+
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+               
+                        <h4 class="font-20 weight-500 mb-10 text-capitalize">
+                            Welcome back <div asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="weight-600 font-30 text-blue"> @User.Identity.Name</div>
+                        </h4>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-8 mb-30">
+                <div class="card-box height-100-p pd-20">
+                    <h2 class="h4 mb-20">Activity</h2>
+                    <div>
+                        <img src="~/img/IMG-0676.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 mb-30">
+                <div class="card-box height-100-p pd-20">
+                    <h2 class="h4 mb-20">Lead Target</h2>
+                    <div>
+                        <img src="~/img/IMG-0677.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

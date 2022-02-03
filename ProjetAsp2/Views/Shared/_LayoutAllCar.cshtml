@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/misc/favicon.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@ViewData["Title"] - ProjetAsp2</title>
+
+
+    <!-- Bootstrap Core CSS-->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS-->
+    <link href="~/css/universal.css" rel="stylesheet">
+
+    <script src="https://maps.googleapis.com/maps/api/js?"></script>
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="top">
+    <!-- Preloader
+    <div id="preloader">
+        <div id="status"></div>
+    </div>-->
+    <!-- Navigation-->
+
+
+    <nav class="navbar navbar-universal navbar-custom navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target=".navbar-main-collapse" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span><span class="icon-bar">
+                    </span>
+                    <span class="icon-bar">
+                    </span>
+                </button>
+                <a href="#page-top" class="navbar-brand page-scroll">
+                    <!-- Text or Image logo--><img src="img/logo.png" alt="Logo" class="logo">
+                    <img src="img/logodark.png" alt="Logo" class="logodark">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-main-collapse">
+                <ul class="nav navbar-nav navbar-left">
+
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Home <span class="caret"></span></a>
+
+                    </li>
+
+
+
+
+                    <li class="nav-item">
+                        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy <span class="caret"></span></a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a asp-area="" asp-controller="Dash" asp-action="Index">Dhashbord <span class="caret"></span></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="" asp-controller="Cars" asp-action="Index">Car <span class="caret"></span></a>
+
+                    </li>
+                    <li class="menu-divider visible-lg">&nbsp;</li>
+                    <li class="nav-item">
+                        <partial name="_LoginPartial" />
+                    </li>
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
+
+
+    <footer>
+        <section class="section-small footer bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h5>About</h5>
+                        <p>Thanks for choosing Universal for your next project! Universal is a unique template for building  beautiful business website. We have a dedicated support team ready to answer your questions.</p>
+                    </div>
+                    <div class="col-sm-2 col-sm-offset-1 footer-menu">
+                        <h5>Company</h5>
+                        <h6 class="no-pad"><a href="services.html">Our Services</a></h6>
+                        <h6 class="no-pad"><a href="clients.html">Our Clients</a></h6>
+                        <h6 class="no-pad"><a href="contact.html">Contact Us</a></h6>
+                        <h6 class="no-pad"><a href="shop.html">Shop</a></h6>
+                    </div>
+                    <div class="col-sm-2 footer-menu">
+                        <h5>&nbsp;</h5>
+                        <h6 class="no-pad"><a href="about.html">About us</a></h6>
+                        <h6 class="no-pad"><a href="portfolio-masonry-4.html">Portfolio</a></h6>
+                        <h6 class="no-pad"><a href="team.html">Our Team</a></h6>
+                        <h6 class="no-pad"><a href="register.html">Register</a></h6>
+                    </div>
+                    <div class="col-sm-3 text-right">
+                        <h5>Total downloads</h5><span data-min="0" data-max="2785" data-delay="5" data-increment="3" class="numscroller">0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-small footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h6>
+                            Powered By <a href="http://ForBetterWeb.com"> forbetterweb.com</a>
+                        </h6>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <h6>
+                            We <i class="fa fa-heart fa-fw"></i> creative people
+                        </h6>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1 text-right">
+                        <ul class="list-inline">
+                            <li><a href="/"><i class="fa fa-twitter fa-fw fa-lg"></i></a></li>
+                            <li><a href="/"><i class="fa fa-facebook fa-fw fa-lg"></i></a></li>
+                            <li><a href="/"><i class="fa fa-google-plus fa-fw fa-lg"></i></a></li>
+                            <li><a href="/"><i class="fa fa-linkedin fa-fw fa-lg"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- jQuery-->
+    <script src="~/js/jquery-1.12.4.min.js"></script>
+    <!-- Bootstrap Core JavaScript-->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript-->
+    <script src="~/js/jquery.easing.min.js"></script>
+    <script src="~/js/jquery.countdown.min.js"></script>
+    <script src="~/js/device.min.js"></script>
+    <script src="~/js/form.min.js"></script>
+    <script src="~/js/jquery.placeholder.min.js"></script>
+    <script src="~/js/jquery.shuffle.min.js"></script>
+    <script src="~/js/jquery.parallax.min.js"></script>
+    <script src="~/js/jquery.circle-progress.min.js"></script>
+    <script src="~/js/jquery.swipebox.min.js"></script>
+    <script src="~/js/smoothscroll.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/jquery.smartmenus.js"></script>
+    
+    <script src="~/js/map.js"></script>
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+    <!-- Custom Theme JavaScript-->
+    <script src="~/js/universal.js"></script>
+
+
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿@model ProjetAsp2.Models.Car
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div class="small-header bg-img4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>our cars are our dna</h2>
+            </div>
+            <div class="col-md-6 text-right">
+                <h5 class="breadcrumb">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a> / <a asp-area="" asp-controller="Cars" asp-action="AllCars">Car</a> / Single car
+
+                   
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- shop-->
+<section id="shop" class="section-small">
+    <div class="container">
+        <div class="row">
+            <!-- shop carousel-->
+            <div id="carousel-shop" class="carousel slide">
+                <div class="col-lg-6 carousel-outer">
+                    <!-- Wrapper for slides-->
+                    <div class="carousel-inner">
+                        <div class="item active"><img src="~/images/@Html.DisplayFor(model => model.CarPicture)" alt=""></div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-6 slide">
+                    <h4>@Html.DisplayFor(model => model.Nom)</h4>
+                    <p class="small">
+                        @Html.DisplayNameFor(model => model.Transmission) : @Html.DisplayFor(model => model.Transmission)
+                    </p>
+                    <p>
+                        @Html.DisplayNameFor(model => model.Carburant) : @Html.DisplayFor(model => model.Carburant)
+                    </p>
+
+                    <p>
+                        @Html.DisplayNameFor(model => model.NbSiege) : @Html.DisplayFor(model => model.NbSiege)
+                    </p>
+
+                        <hr>
+                    <p>
+                        @Html.DisplayNameFor(model => model.Description) :  @Html.DisplayFor(model => model.Description)
+
+                    </p>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <h2 class="no-pad"> @Html.DisplayFor(model => model.Prix) DT </h2>
+                        </div>
+                     
+                        <button type="submit" class="btn btn-dark">Reserve now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-small bg-white">
+    <div class="container">
+        <h3>Related car</h3>
+        <div class="row grid-pad text-center">
+            @foreach (var item in ViewBag.cars)
+            {
+            <div class="col-sm-6 col-md-3">
+
+                <div class="shop-item">
+                    <div class="badge price">@item.Prix DT</div>
+                    <div class="badge price"></div>
+
+
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        <img src="~/images/@item.CarPicture" alt="" class="img-responsive center-block">
+                    </a>
+                </div>
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    <h5>   @item.Nom</h5>
+                </a>
+            </div>
+
+
+
+
+
+            }
+
+        </div>
+
+     
+
+
+
+
+
+
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+

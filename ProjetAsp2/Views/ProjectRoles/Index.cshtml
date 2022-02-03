@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ProjetAsp2.Models.ProjectRole>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+
+}
+
+
+
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+
+
+            <!-- Export Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <div class="pull-right">
+                        <a asp-action="Create" class="btn btn-primary btn-sm scroll-click"> Create New Role</a>
+                    </div>
+                </div>
+
+                <div class="pb-20">
+                    <table class="table table-bordered multiple-select-row data-table-export nowrap">
+                        <thead>
+
+
+                            <tr>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RoleName)
+                                </th>
+                             
+
+
+                                <th>Action</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @item.RoleName
+                                    </td>
+
+                                   
+
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Export Datatable End -->
+        </div>
+
+    </div>
+</div>
+
